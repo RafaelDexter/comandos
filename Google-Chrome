@@ -1,0 +1,13 @@
+Para o Google-Chrome edite seu /etc/apt/sources.list e adicione as linhas:
+
+# Google Chrome.
+# Chave GPG: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+deb http://dl.google.com/linux/deb/ stable main
+
+rode o comando:
+	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+
+
+Após isso:
+	apt-get update
+	apt-get install google-chrome-stable  

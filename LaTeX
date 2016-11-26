@@ -1,0 +1,47 @@
+Instalando o LaTex.
+
+Baixar a ISO:
+http://linorg.usp.br/CTAN/systems/texlive/Images/
+
+OBS: eu baixei: texlive2013.iso.torrent	20-Jun-2013 19:30 	48K
+Depois usei um programa de torrent para baixar a ISO.
+
+Após terminar de baixar, montei a imagem ISO:
+
+# mount -o loop /pastaOrigem/nomeDoArquivo.iso /mnt/PastaDestino
+
+Uso a pasta /mnt e crio uma pasta para a imagem, pois a pasta mnt é a pasta padrão onde ficam montados os hds, cdroms e disquetes, mas fica a seu critério o local para guardar a imagem já montada. 
+
+Não deu muito certo, dai só montei na pasta mnt, ficou:
+# mount -o loop /pastaOrigem/nomeDoArquivo.iso /mnt
+ou
+# mount -o loop /pastaOrigem/nomeDoArquivo.iso /mnt/
+
+Feito isso, seus arquivos estão prontos na pasta "/mnt". 
+
+Execute o script install-tl para instalar (os comentários estão em itálico):
+cd /mnt
+./install-tl
+[... messages omitted ...]
+Enter command: i
+[... when done, see below for post-install ...]
+
+Após a instalação terminar, você deve adicionar o diretório de binários do TeX Live para seu PATH. Por exemplo: 
+
+  PATH=/usr/local/texlive/2013/bin/i386-linux:$PATH 
+
+Use a sintaxe para a sua "shell", seu diretório de instalação, e seu nome de plataforma binário em vez de i386-linux.
+
+ficou assim:
+
+PATH=/usr/local/texlive/2013/bin/x86_64-linux:$PATH
+
+After a successful installation, please try processing simple test documents, such as latex small2e.
+
+ Add /usr/local/texlive/2013/texmf-dist/doc/man to MANPATH, if not dynamically found.
+ Add /usr/local/texlive/2013/texmf-dist/doc/info to INFOPATH.
+
+ Most importantly, add /usr/local/texlive/2013/bin/x86_64-linux
+ to your PATH for current and future sessions.
+
+

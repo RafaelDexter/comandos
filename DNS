@@ -1,0 +1,13 @@
+nslookup
+
+Exemplos:
+
+ $ 	nslookup www.debian.org
+ $ 	Server:		192.168.0.1
+ $ 	Address:	192.168.0.1#53
+ $ 	
+ $ 	Non-authoritative answer:
+ $ 	Name:	www.debian.org
+ $ 	Address: 200.17.202.197
+
+nslookup 200.17.202.197

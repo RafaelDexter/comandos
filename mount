@@ -1,0 +1,14 @@
+Montando HD externo
+
+Primeiro temos que verificar em qual lugar foi "montado" o HD, neste exemplo é no: /dev/sdb7
+para isto utilize o comando "fdisk -l"
+
+# mkdir /mnt/HD
+
+depois monte o HD nessa pasta com o seguinte comando:
+# mount /dev/sdb7 /mnt/HD
+
+Depois é so ir até a pasta HD que seu HD vai estar montado lá!
+
+Se não der certo de montar com o comando a cima faça o seguinte:
+# mount -t ntfs /dev/sdb7 /mnt/HD

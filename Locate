@@ -1,0 +1,13 @@
+Como usar o Locate
+ 
+Locate é um programa que serve para a procura de arquivos no disco. Ele cria um banco de dados (é bom atualizá-lo semanalmente ou quando houver alguma mudança no sistema), onde neste banco de dados contém todas as localizações de todos os arquivos que estão no seu sistema. 
+
+	updatedb 
+
+Pronto! Agora é so testar: 
+
+	locate nomedoarquivo 
+
+Exemplo: 
+
+	locate dxt.conf 

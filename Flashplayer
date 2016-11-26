@@ -1,0 +1,24 @@
+Download
+--------
+
+	https://get.adobe.com/flashplayer/
+
+Instalação
+----------
+
+Iceweasel
+
+	# cp libflashplayer.so /usr/lib/mozilla/plugins/
+Copy the Flash Player Local Settings configurations files to the /usr directory.  At the prompt type:
+	# cp -r usr/* /usr
+ 
+ 
+Teste
+-----
+
+Reinicie o navegador e entre no site:
+
+	http://www.adobe.com/software/flash/about/
+
+lá aparecerá uma animação, caso você tenha instalado o flashplayer
+corretamente.

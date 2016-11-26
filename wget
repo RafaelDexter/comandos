@@ -1,0 +1,7 @@
+wget --no-host-directories --no-verbose --no-clobber --mirror --page-requisites \
+--convert-links --no-parent --cut-dirs=1 -erobots=off --force-html \
+-A jpg, bmp, png, gif, vps, dat http://www.jaist.ac.jp/~t-ozaki/vps_pao2013/
+
+
+wget --no-host-directories --no-verbose --no-clobber --no-parent --cut-dirs=1 -erobots=off \
+-A jpg, bmp, png, gif, vps, dat http://www.jaist.ac.jp/~t-ozaki/vps_pao2013/

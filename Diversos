@@ -1,0 +1,40 @@
+Deletando pasta com cadeado:
+	rm -R <caminho da pasta>
+
+Criando um diretório na pasta atual:
+ 	mkdir <mome do diretório>
+
+Criando um diretório em outra pasta:
+ 	mkdir <caminho>/<mome do diretório>
+
+Movendo arquivos:
+	sudo mv <caminho de origem> <caminho de destino>
+
+Desinstalar Iceweasel:
+	apt-get remove iceweasel
+
+Para voltar um diretório acima:
+	cd .. 
+
+Para voltar dois diretórios acima: 
+	cd ../.. 
+
+Visualizando o conteúdo da pasta:
+	ls
+
+Visualizar o conteúdo da pasta mostrando permissões: 
+	ls -l 
+
+Visualizar o conteúdo da pasta filtrando o resultado: 
+	ls | grep termo-de-busca 
+ex: para visualizar apenas os arquivos que contenham .png no nome: ls| grep .png
+
+Como acessar pastas com nomes compostos?
+
+Note que se você digitar o comando
+	cd Área de Trabalho
+O terminal retornará um erro afirmando que a pasta "Área" não existe. O espaço indica, no terminal, que o nome acabou. Para acessar arquivos com nomes compostos digite uma barra invertida antes do espaço:
+	cd Área\ de\ Trabalho
+
+Montar ISO
+# mount "sua_Imagem.iso" /media/diretorio_ISO -o loop 

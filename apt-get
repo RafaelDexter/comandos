@@ -1,0 +1,29 @@
+Fonte: http://www.debian.org/doc/manuals/apt-howto/ch1.pt-br.html
+Para instalar o netselect, como sempre:
+
+     # apt-get install netselect
+
+Executando-o sem parâmetros mostra a ajuda. Executando-o com uma lista separada por espaços de hosts (mirrors), ele retornará um escore e um dos hosts. Esse escore leva em consideração o tempo estimado de ping e o número de hops (hosts pelos quais uma requisição de rede deve passar para chegar no host destino), e é inversamente proporcional à velocidade estimada de download (ou seja, quanto menor, melhor). O host retornado é o que obteve o menor escore (a lista dos escores pode ser obtida acrescentanto a opção -vv). Veja o seguinte exemplo: 
+
+# netselect ftp.br.debian.org download.unesp.br debian.c3sl.ufpr.br sft.if.usp.br fma.if.usp.br linorg.usp.br debian.las.ic.unicamp.br debian.pop-sc.rnp.br mirror.pop-sc.rnp.br http://http.us.debian.org/debian
+
+ou para obtermos uma lista:
+
+# netselect -vv ftp.br.debian.org download.unesp.br debian.c3sl.ufpr.br sft.if.usp.br fma.if.usp.br linorg.usp.br debian.las.ic.unicamp.br debian.pop-sc.rnp.br mirror.pop-sc.rnp.br
+
+Editando o "source.list"
+
+#deb ftp.br.debian.org stable main contrib non-free
+#deb download.unesp.br stable main contrib non-free
+#deb debian.c3sl.ufpr.br stable main contrib non-free
+#deb sft.if.usp.br stable main contrib non-free
+#deb fma.if.usp.br stable main contrib non-free
+deb linorg.usp.br stable main contrib non-free
+#deb debian.las.ic.unicamp.br stable main contrib non-free
+#deb debian.pop-sc.rnp.br stable main contrib non-free
+#deb mirror.pop-sc.rnp.br stable main contrib non-free
+
+
+
+
+

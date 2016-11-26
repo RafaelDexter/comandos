@@ -1,0 +1,40 @@
+Flash
+
+Baixe o Google Chrome, somente para pegar o plugin. Descompacte-o
+
+https://www.google.com/intl/en/chrome/browser/desktop/index.html
+
+Look for these two files: libpepflashplayer.so and manifest.json in PepperFlash folder. 
+
+Copy them to /usr/lib/PepperFlash folder. If the folder doesn't exist, create it.
+
+Abra o arquivo manifest.json com um editor de texto e verifiaque a versão. No meu caso é 16.0.0.296
+
+
+Agora, abra o arquivo chromium.desktop, utilizando um editor:
+
+	/usr/share/applications/chromium.desktop
+
+Procure pela linha:
+
+	Exec=/usr/bin/chromium %U
+
+e adicione isto
+
+	--ppapi-flash-path=/usr/lib/PepperFlash/libpepflashplayer.so --ppapi-flash-version=16.0.0.296
+
+então deverá ficar assim:
+
+Exec=/usr/bin/chromium --ppapi-flash-path=/usr/lib/PepperFlash/libpepflashplayer.so --ppapi-flash-version=16.0.0.296 %U
+
+Entre no chromium, na barra de endereço digite:
+
+chrome://plugins
+
+Se tiver outra versão desebilite-a.
+
+fonte:
+http://www.ubuntuvibes.com/2012/07/how-to-install-latest-flash-player-in.html
+
+
+

@@ -1,0 +1,80 @@
+Java
+----
+Version 8 Update 91
+-------------------
+
+Primeiramente, vá ao site do Java e clique em "Download". Na próxima janela que aparecer, clique em "Linux 64", salve o arquivo onde achar melhor. 
+
+Agora vamos descompactar esse arquivo, abra o terminal e torne-se root (su), vá ao diretório onde você salvou seu arquivo compactado e execute os comandos abaixo: 
+
+	tar -zxvf jre-8u91-linux-x64.tar.gz -C /usr/local/
+
+Obs.: neste exemplo, o arquivo que baixado foi "jre-8u91-linux-x64.tar.gz".
+
+Para o Mozilla 
+
+	update-alternatives --install /usr/bin/java java /usr/local/jre1.8.0_91/bin/java 1
+	update-alternatives --install /usr/lib/mozilla/plugins/libjavaplugin.so java.so /usr/local/jre1.8.0_91/lib/amd64/libnpjp2.so 1 
+
+
+Para o Chromium não funciona mais!!!!
+
+	update-alternatives --install /usr/bin/java java /usr/local/jre1.8.0_91/bin/java 1
+	update-alternatives --install /usr/lib/chromium/plugins/libjavaplugin.so java.so /usr/local/jre1.8.0_91/lib/amd64/libnpjp2.so 1 
+
+Agora as seguintes linhas são as mesmas para ambos navegadores
+
+	update-alternatives --set java /usr/local/jre1.8.0_91/bin/java
+	update-alternatives --set java.so /usr/local/jre1.8.0_91/lib/amd64/libnpjp2.so 
+
+Uso: update-alternatives [<opção> ...] <comando>
+
+Comandos:
+  --install <link> <nome> <caminho> <prioridade>
+    [--slave <link> <nome> <caminho>] ...
+                            acrescentar um grupo de alternativas ao sistema.
+
+  --remove <nome> <caminho> remover <caminho> do grupo alternativo <nome>.
+
+  --remove-all <nome>      remover o grupo <nome> do sistema de alternativas.
+
+  --auto <nome>            mudar o link principal <nome> para modo automático.
+
+  --display <nome>         mostrar informação sobre o grupo <nome>.
+
+  --query <nome>           versão processável por máquina de --display <nome>.
+
+  --list <nome>            mostrar todos os alvos do grupo <nome>.
+
+  --get-selections         listar os nomes mestre de alternativas e o seu estado.
+
+  --set-selections         ler estado de alternativa da entrada standard.
+
+  --config <nome>          mostrar alternativas para o grupo <nome> e pedir ao utilizador para escolher qual utilizar.
+
+  --set <nome> <caminho>   definir o <caminho> como alternativa para <nome>.
+
+  --all                    chamar --config para todas as alternativas.
+
+<link> é um link simbólico que aponta para /etc/alternatives/<nome>.
+  (e.g. /usr/bin/pager)
+
+<nome> é um nome mestre para este grupo de link.
+  (e.g. pager)
+
+<caminho> é a localização de um um dos ficheiros alvo da alternativa.
+  (e.g. /usr/bin/less)
+
+<prioridade> é um inteiro; as opções com números maiores têm prioridade superior em modo automático.
+
+Opções:
+  --altdir <directório>    alterar o directório de alternativas.
+  --admindir <directório>  alterar o directório administrativo.
+  --log <ficheiro>         alterar o ficheiro de registo.
+  --force                  permitir substituir ficheiros por links alternativos.
+  --skip-auto              saltar a questão para alternativas correctamente configuradas em modo automático (relevante apenas para --config)
+  --verbose                operação detalhada, mais texto na saída.
+  --quiet                  operação silenciosa, saída mínima
+  --help                   mostrar esta mensagem de ajuda.
+  --version                mostrar a versão.
+

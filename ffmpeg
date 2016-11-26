@@ -1,0 +1,34 @@
+ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0 -f alsa -i hw:0 output.mkv
+
+ffmpeg -i input -c:v libx264 -preset  output.mkv
+ffmpeg -i input.mkv -i pos.m4a -c:v libx264 -preset ultrafast -qp 0 -c:a copy -pix_fmt yuv420p output.mkv
+
+ffmpeg -loop 1 -framerate 2 -i input.png -i audio.ogg -c:v libx264 -preset medium -tune stillimage -crf 18 -c:a copy -shortest -pix_fmt yuv420p output.mkv
+
+ffmpeg -loop 1 -framerate 2 -i input.png -i audio.ogg -c:v libx264 -preset medium -tune stillimage -crf 18 -c:a copy -shortest -pix_fmt yuv420p output.mkv
+
+Cut video
+http://superuser.com/questions/138331/using-ffmpeg-to-cut-up-video
+https://trac.ffmpeg.org/wiki/Seeking
+  -> http://ffmpeg.org/ffmpeg.html#Main-options
+
+See this latter: FFMPEG Introduction & Examples
+https://www.youtube.com/watch?v=BiMP_hN8f6s
+
+Breno:
+Para gravar tela:
+
+ffmpeg -f alsa -ac 2 -i pulse -f x11grab -r 15 -s 1366x682 -i :0.0+0,86 -acodec flac -vcodec libx264 -preset ultrafast -crf 0 -threads 0 output.mkv
+
+
+Para extrair o som:
+
+ffmpeg -i output.mkv -qscale 0 temp.flac
+
+Para deixar o vídeo sem som:
+
+ffmpeg -i output.mkv -qscale 0 -an temp.mkv
+
+Para incluir um novo áudio no vídeo:
+
+ffmpeg -i temp.mkv -i temp-nn.flac -qscale 0 final.mkv
