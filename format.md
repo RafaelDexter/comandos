@@ -49,6 +49,33 @@ ou nas subseções [*fs_types*] para os tipos de uso especificados pela opção 
 adicionalmente pela relação de recursos encontrada nas subseções [*fs_types*] para o sistema de arquivos
 e os tipos de uso.
 
++ **```-q```**
+
+Execução silenciosa. Útil se o **mke2fs** for executado em um script.
+
++ **```-t```** *fs-type*
+
+Especifica o tipo de sistema de arquivos (ext2, ext3, ext4, etc.) que deve ser criado.
+Se esta opção não for especificada, o **mke2fs** escolherá um padrão por meio de como o comando
+foi executado (por exemplo, usando o **mkfs.ext2**, **mkfs.ext3**, etc.) ou por padrão como
+definido pelo arquivo **/etc/mke2fs.conf**.
+
+Se a opção **```-O```** for usada para adicionar ou remover explicitamente opções de sistema de
+arquivos que devem ser definidas no sistema de arquivos recém-criado, o sistema de arquivos
+resultante pode não ser suportado pelo *fs-type* solicitado.
+
++ **```-T```** *usage-type[,...]*
+
+Especifica como o sistema de arquivos será usado, para que o **mke2fs** possa escolher os melhores 
+parâmetros do sistema de arquivos para esse uso. Os tipos de uso suportados são definidos no arquivo
+de configuração **/etc/mke2fs.conf**. O usuário pode especificar um ou mais tipos de uso usando uma
+lista separada por vírgulas.
+
++ **```-U```** *UUID*
+
+Cria o sistema de arquivos com o UUID especificado.
+
+
 + **```-v```**
 
 Verbose execution.
@@ -57,6 +84,12 @@ Verbose execution.
 + **```-V```**
 
 Imprimi o número da versão do **mke2fs** e sai.
+
+### Exemplo
+
+```
+mkfs -c -L d320 -t ext4 -v /dev/sdb1
+```
 
 
 
