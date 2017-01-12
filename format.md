@@ -88,7 +88,7 @@ Imprimi o número da versão do **mke2fs** e sai.
 ### Exemplo
 
 ```
-mkfs -c -L d320 -t ext4 -v /dev/sdb1
+mke2fs -c -L d320 -t ext4 -v /dev/sdb1
 ```
 
 
