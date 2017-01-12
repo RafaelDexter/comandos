@@ -12,9 +12,9 @@ um teste de leitura rápida.
 
 + **```-F```**
 
-Força o ```mke2fs``` a criar um sistema de arquivos, mesmo que o dispositivo especificado não
+Força o **mke2fs** a criar um sistema de arquivos, mesmo que o dispositivo especificado não
 seja uma partição em um dispositivo especial de bloco ou se outros parâmetros não fizerem sentido.
-Para forçar o ```mke2fs``` a criar um sistema de arquivos mesmo se o sistema de arquivos parece
+Para forçar o **mke2fs** a criar um sistema de arquivos mesmo se o sistema de arquivos parece
 estar em uso ou está montado (uma coisa verdadeiramente perigosa de se fazer), esta opção deve
 ser especificada duas vezes.
 
@@ -24,6 +24,40 @@ Cria um sistema de arquivos com um *journal* ext3. Se a opção **```-J```** nã
 os parâmetros do *journal* padrão serão usados para criar um *journal* de tamanho apropriado
 (dado o tamanho do sistema de arquivos) armazenado no sistema de arquivos. Note que você deve estar
 usando um kernel que tenha suporte ext3 para realmente fazer uso do *journal*.
+
++ **```-l```** *filename*
+
+Lê uma lista de blocos defeituosos a partir de um arquivo (*filename*). Observe que os números
+de bloco na lista de bad block devem ser gerados usando o mesmo tamanho de bloco usado pelo
+**mke2fs**. Como resultado, a opção **```-c```** para **mke2fs** é um método muito mais simples
+e menos propenso a erros de verificar um disco para blocos ruins antes de formatá-lo, como **mke2fs**
+passará automaticamente os parâmetros corretos para o programa **badblocks**.
+
++ **```-L```** *new-volume-labe*
+
+Define o rótulo do volume para o sistema de arquivos como *new-volume-labe*. O comprimento máximo
+do rótulo é de 16 bytes.
+
+
++ **```-O```** *feature[,...]*
+
+
+Cria um sistema de arquivos com os recursos fornecidos (opções de sistema de arquivos), substituindo
+as opções de sistema de arquivos padrão. Os recursos que são ativados por padrão são especificados
+pela relação *base_features*, que na seção [*default*] no arquivo de configuração **/etc/mke2fs.conf**,
+ou nas subseções [*fs_types*] para os tipos de uso especificados pela opção **```-T```**, modificados
+adicionalmente pela relação de recursos encontrada nas subseções [*fs_types*] para o sistema de arquivos
+e os tipos de uso.
+
++ **```-v```**
+
+Verbose execution.
+
+
++ **```-V```**
+
+Imprimi o número da versão do **mke2fs** e sai.
+
 
 
 ## mkdosfs
