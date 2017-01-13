@@ -6,7 +6,7 @@ export INTEL17
 
 umask 022
 source $INTEL17/bin/iccvars.sh -arch intel64
-source $/bin/ifortvars.sh -arch intel64
+source $INTEL17/bin/ifortvars.sh -arch intel64
 ICC_LIB=INTEL17/compiler/lib/intel64_lin
 MKL_LIB=INTEL17/mkl/lib/intel64_lin
 MPI_LIB=INTEL17/mpi/intel64/lib
