@@ -1,10 +1,12 @@
 Compactação e descompactação de arquivos com Tar e gzip
 
-A sintaxe do Tar é a seguinte:
+A sintaxe do **tar** é a seguinte:
 
+```
 tar [parâmetros] [nome_do_arquivo_tar] [arquivos_de_origem]
+```
 
-Na linha acima, tar é o comando. Em parâmetros, é possível utilizar várias opções. Eis as principais:
+Em parâmetros, é possível utilizar várias opções. Eis as principais:
 
 -c - cria um novo arquivo tar;
 -t - exibe o conteúdo de um arquivo tar;
@@ -17,21 +19,40 @@ Na linha acima, tar é o comando. Em parâmetros, é possível utilizar várias 
 -z - comprime o arquivo tar resultante com o gzip (visto mais à frente);
 -C - especifica o diretório dos arquivos a serem armazenados (note que, neste caso, a letra é maiúscula).
 
-O campo nome_do_arquivo_tar especifica qual o nome que o arquivo .tar terá, e o campo arquivos_de_origem define o diretório ou os arquivos que se tornarão um .tar. Vamos ver alguns exemplos para facilitar a compreensão:
+O campo `nome_do_arquivo_tar` especifica qual o nome que o arquivo `.tar` terá,
+e o campo `arquivos_de_origem` define o diretório ou os arquivos que se tornarão
+um `.tar`. Vamos ver alguns exemplos para facilitar a compreensão:
 
-	tar -cf lendas.tar saci.txt curupira.txt
+```
+tar -cf cidades.tar curitiba londrina maringa
+```
 
-O comando acima cria o arquivo lendas.tar, que contém os arquivos saci.txt e curupira.txt. Aqui, você deve ter reparado que é possível combinar parâmetros. Neste exemplo, isso ocorreu com -c e -f. No exemplo abaixo, o diretório hardware tem todo o seu conteúdo compactado no arquivo infowester.tar, só que os detalhes são exibidos graças à opção -v:
+O comando acima cria o arquivo `cidades.tar`, que contém os arquivos `curitiba`
+`londrina` e `maringa`. Aqui, você deve ter reparado que é possível combinar parâmetros.
+Neste exemplo, isso ocorreu com -c e -f.
 
-	tar -cvf infowester.tar hardware
+Vamos supor que todos os arquivos (`curitiba`, `londrina` e `maringa`)
+estejam dentro do diretório `parana`. Podemos então compactar o diretório:
 
-O exemplo a seguir lista o conteúdo do arquivo infowester.tar:
+```
+tar -cvf estado.tar parana
+```
 
-	tar -tf infowester.tar
+assim, todo o seu conteúdo compactado no arquivo `estado.tar` (os detalhes
+são exibidos graças à opção `-v`).
 
-Por sua vez, o comando abaixo faz com que todos os arquivos de infowester.tar sejam extraídos (neste ponto, você certamente já sabe as funções dos parâmetros x, v e f no comando):
+O exemplo a seguir lista o conteúdo do arquivo `estado.tar`:
 
-	tar -xvf infowester.tar
+```
+tar -tf estado.tar
+```
+
+Por sua vez, o comando abaixo faz com que todos os arquivos de `estado.tar`
+sejam extraídos:
+
+```
+tar -xvf estado.tar
+```
 
 Já no comando a seguir, apenas o arquivo saci.txt é extraído:
 
