@@ -13,11 +13,13 @@ dispositivo de caracteres e algumas opções comuns:
 ```
 
 O exemplo anterior copia um único bloco de 1024 bytes de `/dev/zero`
-(Um fluxo contínuo de zero bytes) para `new_file`.
+(um fluxo contínuo de zero bytes) para `new_file`.
 
 Estas são as opções importantes do **dd**:
 
 + `if=file` - O arquivo de entrada. O padrão é a entrada padrão.
 + `of=file` - O arquivo de saída. O padrão é a saída padrão.
 + `bs=size` - O tamanho do bloco.
-+ `ibs=size, obs=size` - Os tamanhos de bloco de entrada e saída.
++ `ibs=size obs=size` - Os tamanhos de bloco de entrada e saída.
+Use a opção `bs` Se você quiser usar o mesmo tamanho de bloco para entrada e saída.
+Se não, use `ibs` e `obs` para entrada e saída, respectivamente.
